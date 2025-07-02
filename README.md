@@ -1,6 +1,7 @@
 # Dokyoeong's hompage
-## 1. About Me
-## 2. Work
-## 3. Blog
-## 4. Labs
-## 5. Contact
+## 1. Home
+## 2. About
+## 3. Work
+## 4. Blog
+## 5. Labs
+## 6. Contact
