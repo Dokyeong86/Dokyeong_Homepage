@@ -1,6 +1,39 @@
+// inter 폰트로 변경 + 공통 헤더 layout.tsx에서 적용
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/Header"; // 1. Header 컴포넌트 import
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Dokyeong Yeom - Powered by AI",
+  description: "Product Owner 염도경입니다.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="ko">
+      <body className={inter.className}>
+        <Header /> {/* 2. children 위에 Header를 배치하여 모든 페이지에 공통 적용 */}
+        <main>{children}</main> {/* children이 각 페이지의 page.tsx가 됩니다. */}
+      </body>
+    </html>
+  );
+}
+
+/*
+import type { Metadata } from "next";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+// 폰트 설정
+const inter = Inter({ subsets: ["latin"] });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -32,3 +65,4 @@ export default function RootLayout({
     </html>
   );
 }
+*/

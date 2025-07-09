@@ -1,6 +1,7 @@
 // Dokyeong_Homepage/frontend/lib/api.ts
 
 import axios from 'axios';
+import { Work, Blog, User } from 'c:/Users/hongb/Dokyeong_Homepage/frontend/types';
 
 // 환경 변수에서 백엔드 URL을 가져옵니다.
 // process.env.NEXT_PUBLIC_BACKEND_URL은 Next.js가 빌드 시점에 주입하는 환경 변수입니다.
@@ -20,21 +21,21 @@ const api = axios.create({
 
 // Works 관련 API 함수들
 // 1. 모든 Work 가져오기 (GET /works/)
-export const getWorks = async () => {
+// Explicitly type the return value as Promise<Work[]>
+export const getWorks = async (): Promise<Work[]> => { // <--- ADDED return type Promise<Work[]>
   try {
-    const response = await api.get('/works/'); // GET 요청
-    return response.data; // 서버에서 반환된 데이터 (JSON)
+    const response = await api.get<Work[]>('/works/'); // <--- Added type parameter to axios.get
+    return response.data;
   } catch (error) {
-    // 에러 발생 시 콘솔에 로깅하고 다시 throw하여 호출하는 곳에서 처리하도록 합니다.
     console.error("Error fetching works:", error);
     throw error;
   }
 };
 
 // 2. 특정 Work 가져오기 (GET /works/{id})
-export const getWorkById = async (id: number) => {
+export const getWorkById = async (id: number): Promise<Work> => { // <--- ADDED return type Promise<Work>
   try {
-    const response = await api.get(`/works/${id}`);
+    const response = await api.get<Work>(`/works/${id}`); // <--- Added type parameter to axios.get
     return response.data;
   } catch (error) {
     console.error(`Error fetching work with ID ${id}:`, error);
@@ -43,9 +44,9 @@ export const getWorkById = async (id: number) => {
 };
 
 // 3. 새로운 Work 생성 (POST /works/)
-export const createWork = async (workData: { title: string; description: string; image_url?: string; project_url?: string; tags?: string; }) => {
+export const createWork = async (workData: Omit<Work, 'id' | 'created_at' | 'updated_at'>): Promise<Work> => { // <--- Input & Output types
   try {
-    const response = await api.post('/works/', workData); // POST 요청, workData가 요청 본문이 됩니다.
+    const response = await api.post<Work>('/works/', workData);
     return response.data;
   } catch (error) {
     console.error("Error creating work:", error);
@@ -54,9 +55,9 @@ export const createWork = async (workData: { title: string; description: string;
 };
 
 // 4. 기존 Work 업데이트 (PUT /works/{id})
-export const updateWork = async (id: number, workData: { title?: string; description?: string; image_url?: string; project_url?: string; tags?: string; }) => {
+export const updateWork = async (id: number, workData: Partial<Omit<Work, 'id' | 'created_at' | 'updated_at'>>): Promise<Work> => { // <--- Input & Output types
   try {
-    const response = await api.put(`/works/${id}`, workData);
+    const response = await api.put<Work>(`/works/${id}`, workData);
     return response.data;
   } catch (error) {
     console.error(`Error updating work with ID ${id}:`, error);
@@ -65,9 +66,9 @@ export const updateWork = async (id: number, workData: { title?: string; descrip
 };
 
 // 5. Work 삭제 (DELETE /works/{id})
-export const deleteWork = async (id: number) => {
+export const deleteWork = async (id: number): Promise<void> => { // <--- Return type Promise<void>
   try {
-    await api.delete(`/works/${id}`); // DELETE 요청
+    await api.delete(`/works/${id}`);
     console.log(`Work with ID ${id} deleted successfully.`);
   } catch (error) {
     console.error(`Error deleting work with ID ${id}:`, error);
@@ -77,9 +78,9 @@ export const deleteWork = async (id: number) => {
 
 // --- Blogs 관련 API 함수들 (Works와 동일한 패턴으로 구현) ---
 // 예시: 모든 Blog 가져오기
-export const getBlogs = async () => {
+export const getBlogs = async (): Promise<Blog[]> => { // <--- ADDED return type Promise<Blog[]>
   try {
-    const response = await api.get('/blogs/');
+    const response = await api.get<Blog[]>('/blogs/'); // <--- Added type parameter to axios.get
     return response.data;
   } catch (error) {
     console.error("Error fetching blogs:", error);
@@ -91,9 +92,9 @@ export const getBlogs = async () => {
 
 // --- User 관련 API 함수들 (필요에 따라 추가) ---
 // 예시: 새로운 사용자 생성
-export const createUser = async (userData: { username: string; password: string; email?: string; }) => {
+export const createUser = async (userData: Omit<User, 'id' | 'is_active' | 'created_at' | 'updated_at' | 'hashed_password'> & { password: string }): Promise<User> => { // <--- Input & Output types
     try {
-        const response = await api.post('/users/', userData);
+        const response = await api.post<User>('/users/', userData);
         return response.data;
     } catch (error) {
         console.error("Error creating user:", error);
