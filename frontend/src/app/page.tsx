@@ -16,7 +16,12 @@ export default function Home() {
       {/* Hero/인트로 섹션 */}
       <HeroSection />
       {/* About(대표) 섹션 */}
-      <AboutSection />
+      <AboutSection title="About" direction="left" index={0}>
+        <p className="text-gray-700 leading-relaxed">
+          Product Owner 염도경입니다. 사용자 중심의 제품을 만들기 위해 노력하고 있습니다.
+          {/* TODO: 실제 About 내용으로 교체 */}
+        </p>
+      </AboutSection>
       {/* Works(최근 6개) 섹션 */}
       <WorksSection />
       {/* Blog(최근 6개) 섹션 */}
