@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { getWorks } from 'c:/Users/hongb/Dokyeong_Homepage/frontend/lib/api';
+import { getWorks } from '@/lib/api';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 

@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { getBlogs } from 'c:/Users/hongb/Dokyeong_Homepage/frontend/lib/api';
+import { getBlogs } from '@/lib/api';
 import { motion } from 'framer-motion';
 
 // Blog 데이터 타입 정의

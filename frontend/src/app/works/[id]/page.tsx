@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { getWorkById } from 'c:/Users/hongb/Dokyeong_Homepage/frontend/lib/api';
+import { getWorkById } from '@/lib/api';
 import { motion } from 'framer-motion';
 
 // Work 데이터 타입 정의 (백엔드 스키마에 맞게 수정)

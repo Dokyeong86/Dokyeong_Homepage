@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { getBlogs } from 'c:/Users/hongb/Dokyeong_Homepage/frontend/lib/api';
+import { getBlogs } from '@/lib/api';
 import { motion } from 'framer-motion';
 
 // Blog 데이터 타입 정의 (백엔드 스키마에 맞게 수정)

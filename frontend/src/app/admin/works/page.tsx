@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { getWorks, createWork, updateWork, deleteWork } from 'c:/Users/hongb/Dokyeong_Homepage/frontend/lib/api';
+import { getWorks, createWork, updateWork, deleteWork } from '@/lib/api';
 import { motion } from 'framer-motion';
 
 // Work 데이터 타입 정의
