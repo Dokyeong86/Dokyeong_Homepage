@@ -1,7 +1,7 @@
-// Dokyeong_Homepage/frontend/lib/api.ts
+// Dokyeong_Homepage/frontend/src/lib/api.ts
 
 import axios from 'axios';
-import { Work, Blog, User } from '../types';
+import { Work, Blog, User } from '../../types';
 
 // 환경 변수에서 백엔드 URL을 가져옵니다.
 // process.env.NEXT_PUBLIC_BACKEND_URL은 Next.js가 빌드 시점에 주입하는 환경 변수입니다.

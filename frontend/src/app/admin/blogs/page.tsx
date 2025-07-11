@@ -4,18 +4,8 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getBlogs } from '@/lib/api';
+import { Blog } from '../../../../types';
 import { motion } from 'framer-motion';
-
-// Blog 데이터 타입 정의
-interface Blog {
-  id: number;
-  title: string;
-  summary: string;
-  image_url?: string;
-  tags?: string;
-  created_at: string;
-  updated_at: string;
-}
 
 export default function AdminBlogsPage() {
   const router = useRouter();
