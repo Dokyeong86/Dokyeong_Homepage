@@ -3,40 +3,40 @@ import AboutSection from "../../components/AboutSection";
 
 // 더미 데이터 (실제 데이터로 교체 가능)
 const personalInfo = {
-  name: "홍길동 (Hong Gil-dong)",
+  name: "염도경 (Yeom Dokyeong)",
   contact: {
-    phone: "010-1234-5678",
-    email: "hong@example.com",
+    // phone: "010-1234-5678",
+    email: "dkyeom.po@gmail.com",
   },
   links: [
-    { label: "LinkedIn", url: "https://linkedin.com/in/hong" },
-    { label: "Tech Blog", url: "https://blog.example.com" },
-    { label: "GitHub", url: "https://github.com/hong" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/po-dokyeongyeom/" },
+    // { label: "Tech Blog", url: "https://blog.example.com" },
+    { label: "GitHub", url: "https://github.com/Dokyeong86" },
   ],
 };
 
 const summary = {
   description:
-    "10년 이상의 IT/디지털 신사업 Product Owner 경력. 0-to-1 사업 기획 및 성공적 시장 안착, AI/데이터 기반 전략 수립과 조직 리딩 경험 보유.",
+    "13년 이상의 IT/디지털 신사업 Product Owner 경력. 0-to-1 사업 기획 및 성공적 시장 안착, AI 솔루션 사업 리딩 경험 보유.",
   keywords: [
+    "PO",
+    "AI",
     "기술 이해도",
     "전략 수립",
     "조직 관리",
     "프로세스 개선",
-    "재무 분석",
+    "데이터 분석",
     "파트너십",
-    "PO",
   ],
 };
 
 const workExperiences = [
   {
-    company: "AwesomeTech Inc.",
-    title: "Lead Product Owner",
-    period: "2021.03 ~ 현재",
+    company: "팀벨",
+    title: "전략기획팀 리드",
+    period: "2021.03 - 현재",
     achievements: [
-      "AI 기반 SaaS 플랫폼 0-to-1 기획 및 50억 매출 달성",
-      "조직 10명 → 40명 확장 및 Agile 프로세스 도입",
+      "AI(STT, LLM) 회의록 솔루션 런칭",
       "월간 사용자 5,000명 → 30,000명 성장 견인",
     ],
   },
@@ -53,21 +53,21 @@ const workExperiences = [
 
 const educations = [
   {
-    school: "서울대학교",
-    major: "컴퓨터공학과",
+    school: "동국대학교",
+    major: "정보통신공학",
     status: "졸업",
-    year: "2017",
+    year: "2003.03 - 2011.08",
   },
   {
-    school: "OO고등학교",
+    school: "경남고등학교",
     major: "이과",
     status: "졸업",
-    year: "2013",
+    year: "1997.03 - 2000.02",
   },
 ];
 
 const certifications = [
-  { name: "PMP(Project Management Professional)", org: "PMI", year: "2020" },
+  { name: "정보처리기사", org: "한국산업인력공단", year: "2016" },
   { name: "정보처리기사", org: "한국산업인력공단", year: "2016" },
 ];
 
