@@ -5,7 +5,7 @@ import AboutSection from "../../components/AboutSection";
 const personalInfo = {
   name: "염도경 (Yeom Dokyeong)",
   contact: {
-    // phone: "010-1234-5678",
+    phone: "010-1234-5678",
     email: "dkyeom.po@gmail.com",
   },
   links: [
@@ -33,20 +33,47 @@ const summary = {
 const workExperiences = [
   {
     company: "팀벨",
-    title: "전략기획팀 리드",
+    title: "전략기획실|리드, 글로벌 사업부|리드, PO팀|리드",
     period: "2021.03 - 현재",
     achievements: [
-      "AI(STT, LLM) 회의록 솔루션 런칭",
-      "월간 사용자 5,000명 → 30,000명 성장 견인",
+      "AI KMS(callbot, chatbot, RAG, Agentic AI) PoC: Langsa",
+      "AI 기사 요약 서비스 런칭(STT, LLM): 한국경제TV",
+      "AI(STT, LLM) 회의록 솔루션 런칭: baronote, Timblo",
+      "AI(STT) 회의록 PC App 런칭: baronote",
+      "AI 기록/번역 플랫폼 런칭: soribaro, textar, worksfy",
+      "경영 프로세스 혁신: OKR, Scrum, CRM 등 도입, 글로벌 사업 PI 리드",
+      "글로벌 사업부 안정화 및 인도 법인 설립",
     ],
   },
   {
-    company: "InnovateX",
-    title: "Product Manager",
-    period: "2017.06 ~ 2021.02",
+    company: "크레버스(청담러닝)",
+    title: "AI Learning Team|PO",
+    period: "2019.09 ~ 2021.03",
     achievements: [
-      "신규 B2B 서비스 런칭 및 30% 비용 절감",
-      "데이터 기반 의사결정 체계 구축",
+      "AI 영어 대화 학습 서비스 런칭/운영",
+      "AI Tutoring 서비스 런칭",
+    ],
+  },
+  {
+    company: "휴에이션",
+    title: "기업문화정착팀|사업/경영전략, PM팀|PM",
+    period: "2017.06 ~ 2018.12",
+    achievements: [
+      "ECM 신제품 기획",
+      "삼성생명 사고보험접수 FAX 시스템 구축: 제안/수행 PM",
+      "리더십 워크숍 운영 및 R&D T/F 운영영",
+    ],
+  },
+  {
+    company: "한솔인티큐브",
+    title: "기획팀|전략/관리회계/파트너관리, 개발팀|웹개발",
+    period: "2011.01 ~ 2016.12",
+    achievements: [
+      "M-SENS(STT, TA) MGPP 수립",
+      "영업 파이프라인 및 프로세스 수립",
+      "관리 회계 운영 및 재무 분석 리포팅",
+      "파트너 관리 프로세스 수립 및 개선",
+      "한국수자원공사, 동부화재, 유한킴벌리 콜센터 App 고도화 웹개발",
     ],
   },
 ];
@@ -67,8 +94,8 @@ const educations = [
 ];
 
 const certifications = [
-  { name: "정보처리기사", org: "한국산업인력공단", year: "2016" },
-  { name: "정보처리기사", org: "한국산업인력공단", year: "2016" },
+  { name: "정보처리기사", org: "한국산업인력공단", year: "2012.08" },
+  { name: "OCJP", org: "Oracle", year: "2012.12" },
 ];
 
 export default function AboutPage() {
@@ -83,7 +110,7 @@ export default function AboutPage() {
           <div className="space-y-2">
             <div className="text-xl font-bold">{personalInfo.name}</div>
             <div className="text-sm text-gray-600">
-              연락처: {personalInfo.contact.phone} / {personalInfo.contact.email}
+              연락처: {personalInfo.contact.email}
             </div>
             <div className="flex flex-wrap gap-3 mt-2">
               {personalInfo.links.map((link) => (
